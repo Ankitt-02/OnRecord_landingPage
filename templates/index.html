@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnRecord</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='img/logo_dash2.png') }}"
+      style="height: 100px"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{{ url_for('static', filename='img/logo_dash2.png') }}"
+          alt="OnRecord Logo"
+          style="height: 60px"
+        />
+        <div class="logo-text">OnRecord</div>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#journey">Journey</a>
+        <a href="#tech">Tech Stack</a>
+      </div>
+      <div class="nav-cta">
+        <a href="https://onrecord.streamlit.app/" class="btn-pill"
+          >Start AI Attendance
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 5l7 7-7 7" /></svg
+        ></a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="badge">Welcome to OnRecord</div>
+
+      <h1>AI Powered<br />Attendance <span>System</span></h1>
+
+      <p>
+        Computer vision and speaker recognition combined for attendance.
+        Low-latency processing with consistent identification. Built for
+        accuracy under real-world conditions.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://onrecord.streamlit.app/" class="btn-cta"
+          >Start AI Attendance
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+          >
+            <path d="M9 5l7 7-7 7" /></svg
+        ></a>
+        <a href="#journey" class="link-action">Explore Journey</a>
+      </div>
+
+      <!-- <div class="floating-card card-left">
+            <div class="card-img"><img
+                    src="{{ url_for('static', filename='img/demo/snap-teacher-flow-5.2-photo-attendance.png') }}"
+                    alt="Student"></div>
+        </div>
+
+        <div class="floating-card card-right">
+            <div class="card-img"><img src="{{ url_for('static', filename='img/demo/snap-landing.png') }}"
+                    alt="Landing"></div>
+        </div> -->
+    </header>
+
+    <section id="features" class="features">
+      <h2>Innovative Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="f-icon-box">⋆.📷˚</div>
+          <h3>Face Analysis</h3>
+          <p>
+            Detect and encode multiple faces from a single frame. Embeddings are
+            matched against stored profiles. Attendance is marked only on
+            verified matches.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon-box">🎤︎︎</div>
+          <h3>Sequential Voice ID</h3>
+          <p>
+            Voice-based roll-call with real-time embedding matching. Each
+            response is verified before attendance is marked. Consistent,
+            repeatable identification across sessions.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon-box">🤳</div>
+          <h3>QR-Driven Roster</h3>
+          <p>
+            Enroll students instantly using unique QR codes. Fast onboarding
+            with structured, error-free data.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="teacher-flow">
+      <div class="flow-container">
+        <div
+          class="section-tag"
+          style="text-align: center; display: block; margin-bottom: 40px"
+        >
+          — Workflow —
+        </div>
+        <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 80px">
+          The Teacher's Journey
+        </h2>
+
+        <div class="flow-step">
+          <div class="flow-content">
+            <span class="step-badge">Step 01</span>
+            <h3>Secure Login</h3>
+            <p>
+              Authentication with encrypted credentials and session handling.
+              Your data stays protected and consistent across devices.
+            </p>
+          </div>
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/teacher_flow1.png') }}"
+              alt="Login Portal"
+            />
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/teacher_flow2.png') }}"
+              alt="Teacher Dashboard"
+            />
+          </div>
+
+          <div class="flow-content">
+            <span class="step-badge">Step 02</span>
+            <h3>Interactive Dashboard</h3>
+            <p>
+              Manage subjects, attendance, and student rosters in one place.
+              Clear, structured, and built for fast decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-content">
+            <span class="step-badge">Step 03</span>
+            <h3>Course Management</h3>
+            <p>
+              Create and manage subjects with minimal setup. The system
+              provisions tracking, enrollment, and attendance workflows
+              automatically.
+            </p>
+          </div>
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/teacher_flow3.png') }}"
+              alt="Create Course"
+            />
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/teacher_flow4.png') }}"
+              alt="FaceID Attendance"
+            />
+          </div>
+
+          <div class="flow-content">
+            <span class="step-badge">Step 04</span>
+            <h3>FaceID Attendance</h3>
+            <p>
+              Capture a single frame and detect multiple faces. Embeddings are
+              matched against enrolled profiles for rapid attendance marking.
+            </p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-content">
+            <span class="step-badge">Step 05</span>
+            <h3>Voice ID Attendance</h3>
+            <p>
+              Switch to voice mode for sequential roll-call. Speaker embeddings
+              are matched in real time to verify each student.
+            </p>
+          </div>
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/teacher_flow5.png') }}"
+              alt="Voice Attendance"
+            />
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/teacher_flow6.png') }}"
+              alt="Records Management"
+            />
+          </div>
+          <div class="flow-content">
+            <span class="step-badge">Step 06</span>
+            <h3>Actionable Records</h3>
+            <p>
+              Review verified attendance logs, monitor confidence scores, export
+              data, and track trends over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech" class="tech-stack">
+      <div class="section-tag">— Our Backend —</div>
+      <h2>Advanced Tech Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-card">
+            <div class="t-icon">⚡</div>
+            <div class="tech-info">
+              <h4>Streamlit & Flask</h4>
+              <p>
+                Streamlit powers the interactive UI, with Flask handling routing
+                and backend logic where needed.
+              </p>
+            </div>
+            <span class="tech-tag">Platform</span>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-card">
+            <div class="t-icon">👁️</div>
+            <div class="tech-info">
+              <h4>Face Registration</h4>
+              <p>
+                Leveraging FaceRecognition and Dlib for high-fidelity facial
+                biometrics.
+              </p>
+            </div>
+            <span class="tech-tag">Vision AI</span>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-card">
+            <div class="t-icon">🎤︎</div>
+            <div class="tech-info">
+              <h4>Voice Embeddings</h4>
+              <p>
+                Voice data processed with Librosa and encoded into speaker
+                embeddings using Resemblyzer for reliable identification.
+              </p>
+            </div>
+            <span class="tech-tag">Audio AI</span>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-card">
+            <div class="t-icon">☁️</div>
+            <div class="tech-info">
+              <h4>Supabase Cloud</h4>
+              <p>
+                Real-time PostgreSQL infrastructure with secure auth and sync.
+              </p>
+            </div>
+            <span class="tech-tag">Storage</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="student-journey"
+      class="teacher-flow"
+      style="background: white"
+    >
+      <div class="flow-container">
+        <div
+          class="section-tag"
+          style="text-align: center; display: block; margin-bottom: 40px"
+        >
+          — Workflow —
+        </div>
+        <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 80px">
+          The Student's Journey
+        </h2>
+
+        <div class="flow-step">
+          <div class="flow-content">
+            <span class="step-badge">Phase 01</span>
+            <h3>Instant Enrollment</h3>
+            <p>
+              Course access via QR-based and link-based onboarding. Fast,
+              stateless enrollment without manual data entry.
+            </p>
+          </div>
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/student_flow1.png') }}"
+              alt="Student Enrollment"
+            />
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-content">
+            <span class="step-badge">Phase 02</span>
+            <h3>Biometric Registration</h3>
+            <p>
+              Students enroll once by capturing face and voice signatures. These
+              are encoded into embeddings and reused for all future sessions.
+            </p>
+          </div>
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/student_flow2.png') }}"
+              alt="Biometric Registration"
+            />
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-content">
+            <span class="step-badge">Phase 03</span>
+            <h3>Personal Dashboard</h3>
+            <p>
+              Real-time attendance analytics across all subjects. no
+              assumptions, no manual errors, just verified presence.
+            </p>
+          </div>
+          <div class="flow-image">
+            <img
+              src="{{ url_for('static', filename='img/student_flow3.png') }}"
+              alt="Student Dashboard"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="purple-section">
+      <h2>Ready to upgrade your classroom?</h2>
+      <p>
+        From roll calls to real-time intelligence. OnRecord makes attendance
+        precise, automated, and reliable.
+      </p>
+      <a href="https://onrecord.streamlit.app/" class="btn-white"
+        >Start AI Attendance Now</a
+      >
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img
+              src="{{ url_for('static', filename='img/logo_dash2.png') }}"
+              alt="SnapClass Logo"
+            />
+            <div class="logo-text">OnRecord</div>
+          </div>
+          <p>
+            Attendance, without the “present sir” chaos. Face and voice
+            verification handle it. Faster, cleaner, and far more reliable.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">AI Attendance</a></li>
+            <li><a href="#features">Smart Roster</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#student-journey">Student Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Experience</h4>
+          <ul>
+            <li><a href="#journey">Teacher Journey</a></li>
+            <li><a href="#student-journey">Student Journey</a></li>
+            <li><a href="#features">Voice ID Roll-call</a></li>
+            <li><a href="#features">FaceID Scan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How it Works</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 OnRecord AI. Built with ☕️ for educators everywhere.</p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
