@@ -40,11 +40,35 @@ This landing page serves as:
 - **Jinja2** – template rendering  
 
 ---
+## ⚙️ Run Locally
+
+```bash
+# Clone repo
+git clone https://github.com/your-username/onrecord-landing.git
+cd onrecord-landing
+
+# Create virtual environment
+python3 -m venv venv
+source venv/bin/activate      # Mac/Linux
+venv\Scripts\activate         # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run server
+python app.py
+
 
 ## 📁 Project Structure
+
+```bash
 .
-├── app.py # Flask entry point
-├── templates/ # HTML templates
-├── static/ # CSS, assets
-├── requirements.txt # Dependencies
+├── app.py              # Flask entry point
+├── templates/          # HTML templates
+├── static/             # CSS, assets
+├── requirements.txt    # Dependencies
 └── .gitignore
+
+
+---
+
